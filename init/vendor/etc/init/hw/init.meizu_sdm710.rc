@@ -141,3 +141,6 @@ on boot
     chown system system /sys/class/meizu/tp/gesture_control
     chown system system /sys/class/meizu/fp/qos_set
     chown system system /sys/class/meizu/lcm/display/aod
+
+    # Wifi firmware reload path
+    chown wifi wifi /sys/module/wlan/parameters/fwpath
