@@ -17,6 +17,9 @@ on init
     chown system system  /sys/cs_press/cs_press/sleep
     # @}
 
+on fs
+    setprop sys.usb.ffs.aio_compat 1
+
 on post-fs-data
     #huangxiaotao@System.Setting add for lut mode{@
     chown system system /sys/class/meizu/lcm/display/lut
