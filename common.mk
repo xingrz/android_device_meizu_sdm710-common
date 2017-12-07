@@ -41,6 +41,10 @@ PRODUCT_PACKAGES += \
     libvulkan \
     vendor.display.config@1.0
 
+# HIDL
+PRODUCT_PACKAGES += \
+    android.hidl.base@1.0
+
 # Init
 PRODUCT_PACKAGES += \
     init.qcom.rc
