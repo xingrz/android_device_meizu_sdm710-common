@@ -127,6 +127,10 @@ TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/recovery/root/recovery.fstab
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USES_MKE2FS := true
 
+# Releasetools
+TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_meizu_sdm710
+TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)
+
 # Root
 BOARD_ROOT_EXTRA_FOLDERS := \
     bt_firmware \
