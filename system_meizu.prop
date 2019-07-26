@@ -29,3 +29,6 @@ vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.meizu.media.camera,com.
 #FLYME_MMF_VIDEO:hvx hwjpeg{@
 persist.hvx.hwjpeg.enable=true
 ##@}
+
+# Fix Bilibili
+debug.hwui.use_buffer_age=false
