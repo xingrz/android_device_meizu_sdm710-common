@@ -138,6 +138,7 @@ VENDOR_SECURITY_PATCH := 2019-09-01
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(COMMON_PATH)
