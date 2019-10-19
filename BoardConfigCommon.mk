@@ -60,6 +60,8 @@ USE_XML_AUDIO_POLICY_CONF := 1
 USE_DEVICE_SPECIFIC_CAMERA := true
 USE_CAMERA_STUB := true
 BOARD_QTI_CAMERA_32BIT_ONLY := true
+TARGET_LD_SHIM_LIBS += /vendor/lib/libmms_hal_vstab.so|/vendor/lib/libshim_camera.so
+TARGET_LD_SHIM_LIBS += /vendor/lib/libmms_warper_vstab.so|/vendor/lib/libshim_camera.so
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
