@@ -1,0 +1,9 @@
+service light-hal-2-0 /system/bin/hw/android.hardware.light@2.0-service.meizu_sdm710
+    interface android.hardware.light@2.0::ILight default
+    class hal
+    user system
+    group system
+    shutdown critical
+
+on init
+    chown system system /sys/class/leds/breath/blink
