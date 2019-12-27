@@ -1,0 +1,32 @@
+# IMS
+-app/ims/ims.apk|e33b65ab994691938696da56c4f41acd4bf832dc
+lib64/lib-imsvideocodec.so
+lib64/lib-imsvt.so
+lib64/lib-imsvtextutils.so
+lib64/lib-imsvtutils.so
+lib64/libdiag_system.so
+lib64/libimscamera_jni.so
+lib64/libimsmedia_jni.so
+lib64/librcc.so
+lib64/vendor.qti.imsrtpservice@1.0.so
+
+# Media
+lib/libFileMux.so
+lib/libOmxMux.so
+lib/libmmosal.so
+lib/libmmparser.so
+lib/libmmparser_lite.so
+lib64/libmmosal.so
+
+# Telephony
+-app/QtiTelephonyService/QtiTelephonyService.apk
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+etc/permissions/privapp-permissions-qti.xml
+etc/permissions/qcrilhook.xml
+etc/permissions/qti_libpermissions.xml|d0c300e094c36bfb262cf001773bd5cc8d5858d8
+etc/permissions/qti_permissions.xml
+etc/permissions/telephonyservice.xml
+etc/sysconfig/qti_whitelist.xml
+framework/QtiTelephonyServicelibrary.jar
+framework/qcrilhook.jar
+framework/qti-telephony-common.jar|b1953a3599255f08f1785c677d22810f65e0167b
