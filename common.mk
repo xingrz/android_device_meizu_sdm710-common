@@ -41,6 +41,10 @@ PRODUCT_PACKAGES += \
     libvulkan \
     vendor.display.config@1.0
 
+# Init
+PRODUCT_PACKAGES += \
+    init.qcom.rc
+
 # Net
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
