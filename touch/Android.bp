@@ -12,6 +12,7 @@ cc_binary {
     relative_install_path: "hw",
     vendor: true,
     srcs: [
+        "FifoWatcher.cpp",
         "TouchscreenGesture.cpp",
         "service.cpp",
     ],

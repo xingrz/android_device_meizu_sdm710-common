@@ -8,12 +8,15 @@
 #define LOG_TAG "TouchscreenGesture"
 
 #include "TouchscreenGesture.h"
+#include "FifoWatcher.h"
 
 #include <android-base/logging.h>
 #include <stdio.h>
 #include <stdint.h>
 
 #define GESTURE_CONTROL_PATH "/sys/class/meizu/tp/gesture_control"
+
+#define DT2W_FIFO_PATH "/dev/vendor.mokee.touch@1.0/dt2w"
 
 #define SLIDE_LEFT_ENABLE   (1 << 0)
 #define SLIDE_RIGHT_ENABLE  (1 << 1)
@@ -56,7 +59,20 @@ const std::map<int32_t, TouchscreenGesture::GestureInfo> TouchscreenGesture::kGe
     {5, {0x0296, "letter_v", DRAW_V_ENABLE}},
 };
 
+static FifoWatcher *dt2wWatcher;
+
+static void sighandler(int) {
+    LOG(INFO) << "Exiting";
+    dt2wWatcher->exit();
+}
+
 TouchscreenGesture::TouchscreenGesture() {
+    dt2wWatcher = new FifoWatcher(DT2W_FIFO_PATH, [this](const std::string& file, int value) {
+        LOG(INFO) << "WatcherCallback: " << file << ": " << value;
+        setValue(DOUBLE_TAP_ENABLE, value);
+    });
+
+    signal(SIGTERM, sighandler);
 }
 
 Return<void> TouchscreenGesture::getSupportedGestures(getSupportedGestures_cb resultCb) {
