@@ -110,6 +110,7 @@ TARGET_SYSTEM_PROP := $(COMMON_PATH)/system.prop $(COMMON_PATH)/system_meizu.pro
 
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/recovery/root/recovery.fstab
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USES_MKE2FS := true
 

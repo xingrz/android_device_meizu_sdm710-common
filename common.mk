@@ -7,6 +7,11 @@
 $(call inherit-product, vendor/meizu/sdm710-common/sdm710-common-vendor.mk)
 
 # Overlays
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-device
+PRODUCT_PACKAGE_OVERLAYS +=  $(LOCAL_PATH)/overlay-product
+
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-sdm710
+
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-mokee
 
 # Properties
@@ -145,6 +150,9 @@ PRODUCT_PACKAGES += \
     libgps.utils \
     libloc_core \
     liblocation_api
+
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/gps/etc,$(TARGET_COPY_OUT_VENDOR)/etc)
 
 # Health
 PRODUCT_PACKAGES += \
