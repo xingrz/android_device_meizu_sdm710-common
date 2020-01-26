@@ -1,0 +1,6 @@
+[
+  {
+    "repository": "android_vendor_meizu_sdm710-common",
+    "target_path": "vendor/meizu/sdm710-common"
+  }
+]
