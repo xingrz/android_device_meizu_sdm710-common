@@ -272,6 +272,10 @@ PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service \
     com.android.future.usb.accessory
 
+# VNDK-SP
+PRODUCT_PACKAGES += \
+    vndk-sp
+
 # Wi-Fi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
