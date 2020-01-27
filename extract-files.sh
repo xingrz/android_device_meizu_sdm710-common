@@ -24,11 +24,13 @@ source "${HELPER}"
 CLEAN_VENDOR=true
 
 SRC=$1
+SRC_QC=$2
 
 # Initialize the helper
 setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${MOKEE_ROOT}" true "${CLEAN_VENDOR}"
 
 extract "${MY_DIR}/proprietary-files.txt" "${SRC}"
+extract "${MY_DIR}/proprietary-files-qc.txt" "${SRC_QC}"
 
 if [ -f "${MY_DIR}/../${DEVICE}/proprietary-files.txt" ]; then
     # Reinitialize the helper for device
