@@ -68,3 +68,25 @@ PRODUCT_BOOT_JARS += \
 # VNDK-SP
 PRODUCT_PACKAGES += \
     vndk-sp
+
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v27/arm64/arch-arm-armv7-a-neon/shared/vndk-core/android.hardware.audio.common@2.0-util.so:$(TARGET_COPY_OUT_SYSTEM)/lib/android.hardware.audio.common@2.0-util-v27.so \
+    prebuilts/vndk/v27/arm64/arch-arm-armv7-a-neon/shared/vndk-core/libstagefright_omx.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libstagefright_omx-v27.so \
+    prebuilts/vndk/v27/arm64/arch-arm-armv7-a-neon/shared/vndk-core/libstagefright_xmlparser.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libstagefright_xmlparser-v27.so \
+    prebuilts/vndk/v27/arm64/arch-arm-armv7-a-neon/shared/vndk-core/libui.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libui-v27.so \
+    prebuilts/vndk/v27/arm64/arch-arm-armv7-a-neon/shared/vndk-sp/libbase.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libbase-v27.so \
+    prebuilts/vndk/v27/arm64/arch-arm-armv7-a-neon/shared/vndk-sp/libhidlbase.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libhidlbase-v27.so \
+    prebuilts/vndk/v27/arm64/arch-arm-armv7-a-neon/shared/vndk-sp/libhidltransport.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libhidltransport-v27.so \
+    prebuilts/vndk/v27/arm64/arch-arm-armv7-a-neon/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libutils-v27.so \
+    prebuilts/vndk/v27/arm64/arch-arm-armv7-a-neon/shared/vndk-sp/libhwbinder.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libhwbinder-v27.so \
+    prebuilts/vndk/v27/arm64/arch-arm64-armv8-a/shared/vndk-core/android.hardware.gnss@1.0.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/android.hardware.gnss@1.0-v27.so \
+    prebuilts/vndk/v27/arm64/arch-arm64-armv8-a/shared/vndk-core/android.hardware.sensors@1.0.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/android.hardware.sensors@1.0-v27.so \
+    prebuilts/vndk/v27/arm64/arch-arm64-armv8-a/shared/vndk-core/android.hardware.wifi@1.0.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/android.hardware.wifi@1.0-v27.so \
+    prebuilts/vndk/v27/arm64/arch-arm64-armv8-a/shared/vndk-core/libstagefright_xmlparser.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libstagefright_xmlparser-v27.so \
+    prebuilts/vndk/v27/arm64/arch-arm64-armv8-a/shared/vndk-core/libtinyxml2.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libtinyxml2-v27.so \
+    prebuilts/vndk/v27/arm64/arch-arm64-armv8-a/shared/vndk-sp/libbase.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libbase-v27.so \
+    prebuilts/vndk/v27/arm64/arch-arm64-armv8-a/shared/vndk-sp/libcutils.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libcutils-v27.so \
+    prebuilts/vndk/v27/arm64/arch-arm64-armv8-a/shared/vndk-sp/libhidlbase.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libhidlbase-v27.so \
+    prebuilts/vndk/v27/arm64/arch-arm64-armv8-a/shared/vndk-sp/libhidltransport.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libhidltransport-v27.so \
+    prebuilts/vndk/v27/arm64/arch-arm64-armv8-a/shared/vndk-sp/libhwbinder.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libhwbinder-v27.so \
+    prebuilts/vndk/v27/arm64/arch-arm64-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libutils-v27.so \

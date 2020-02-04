@@ -1,5 +1,24 @@
 import /init.target.rc
 
+on init
+    mount none /system/bin/hw/android.hardware.configstore@1.0-service /vendor/bin/hw/android.hardware.configstore@1.0-service bind
+    mount none /system/bin/hw/android.hardware.drm@1.0-service.widevine /vendor/bin/hw/android.hardware.drm@1.0-service.widevine bind
+    mount none /system/bin/hw/android.hardware.graphics.composer@2.1-service /vendor/bin/hw/android.hardware.graphics.composer@2.1-service bind
+    mount none /system/bin/hw/android.hardware.media.omx@1.0-service /vendor/bin/hw/android.hardware.media.omx@1.0-service bind
+    mount none /system/bin/hw/android.hardware.wifi@1.0-service /vendor/bin/hw/android.hardware.wifi@1.0-service bind
+    mount none /system/bin/mm-pp-dpps /vendor/bin/mm-pp-dpps bind
+    mount none /system/bin/pm-service /vendor/bin/pm-service bind
+    mount none /system/bin/slim_daemon /vendor/bin/slim_daemon bind
+    mount none /system/lib/hw/android.hardware.audio@2.0-impl.so /vendor/lib/hw/android.hardware.audio@2.0-impl.so bind
+    mount none /system/lib/libmms_hal_vstab.so /vendor/lib/libmms_hal_vstab.so bind
+    mount none /system/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so /vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so bind
+    mount none /system/lib64/hw/android.hardware.graphics.composer@2.1-impl.so /vendor/lib64/hw/android.hardware.graphics.composer@2.1-impl.so bind
+    mount none /system/lib64/hw/android.hardware.sensors@1.0-impl.so /vendor/lib64/hw/android.hardware.sensors@1.0-impl.so bind
+    mount none /system/lib64/hw/vendor.qti.hardware.sensorscalibrate@1.0-impl.so /vendor/lib64/hw/vendor.qti.hardware.sensorscalibrate@1.0-impl.so bind
+    mount none /system/lib64/libhwminijail.so /vendor/lib64/libhwminijail.so bind
+    mount none /system/lib64/libsensorndkbridge.so /vendor/lib64/libsensorndkbridge.so bind
+    mount none /system/lib64/vendor.qti.gnss@1.0_vendor.so /vendor/lib64/vendor.qti.gnss@1.0_vendor.so bind
+
 on fs
     setprop sys.usb.ffs.aio_compat 1
     setprop persist.adb.nonblocking_ffs 0
