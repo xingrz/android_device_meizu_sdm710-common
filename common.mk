@@ -64,8 +64,3 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
-
-# Treble
-PRODUCT_COPY_FILES += \
-    $(SRC_TARGET_DIR)/product/gsi/init.legacy-gsi.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.legacy-gsi.rc \
-    $(SRC_TARGET_DIR)/product/gsi/init.vndk-27.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/gsi/init.vndk-27.rc
