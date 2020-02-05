@@ -103,6 +103,16 @@ vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp
 vendor/etc/acdbdata/adsp_avs_config.acdb
 
+# Audio - HAL
+lib/libaudioroute.so
+lib64/libaudioroute.so
+vendor/lib/hw/audio.primary.sdm710.so
+vendor/lib/libaudio_log_utils.so
+vendor/lib/libtinycompress_vendor.so
+vendor/lib64/hw/audio.primary.sdm710.so
+vendor/lib64/libaudio_log_utils.so
+vendor/lib64/libtinycompress_vendor.so
+
 # Camera
 lib/libarcsoft_supernight.so
 lib/libsmcinvokecred.so
