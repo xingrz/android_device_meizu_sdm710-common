@@ -29,7 +29,8 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
-    libaacwrapper
+    libaacwrapper \
+    libaudioroute
 
 # Display
 PRODUCT_PACKAGES += \
@@ -68,6 +69,17 @@ PRODUCT_BOOT_JARS += \
 # VNDK-SP
 PRODUCT_PACKAGES += \
     vndk-sp
+
+PRODUCT_PACKAGES += \
+    android.hardware.audio.common-util \
+    android.hardware.audio.common@2.0-util \
+    android.hardware.audio.effect@2.0 \
+    android.hardware.audio@2.0 \
+    android.hardware.biometrics.fingerprint@2.1 \
+    android.hardware.soundtrigger@2.0 \
+    android.hardware.usb@1.0 \
+    android.hardware.wifi@1.0 \
+    android.hardware.wifi@1.1
 
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v27/arm64/arch-arm-armv7-a-neon/shared/vndk-core/android.hardware.audio.common@2.0-util.so:$(TARGET_COPY_OUT_SYSTEM)/lib/android.hardware.audio.common@2.0-util-v27.so \
