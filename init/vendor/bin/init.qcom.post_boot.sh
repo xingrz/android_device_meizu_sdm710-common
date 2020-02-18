@@ -32,10 +32,10 @@ target=`getprop ro.board.platform`
 function configure_zram_parameters() {
     MemTotalStr=`cat /proc/meminfo | grep MemTotal`
     MemTotal=${MemTotalStr:16:8}
-    # Set Zram disk size to 512MB for 3GB and below targets, 1GB for above 3GB targets.
+    # Set Zram disk size to 512MB for 3GB and below targets, 1.5GB for above 3GB targets.
     if [ -f /sys/block/zram0/disksize ]; then
         if [ $MemTotal -gt 3145728 ]; then
-            echo 1073741824 > /sys/block/zram0/disksize
+            echo 1610612736 > /sys/block/zram0/disksize
         else
             echo 536870912 > /sys/block/zram0/disksize
         fi
@@ -1984,6 +1984,9 @@ case "$target" in
         # CPU is isolated/hotplugged, the IRQ affinity is adjusted
         # to one of the CPU from the default IRQ affinity mask.
         echo 3f > /proc/irq/default_smp_affinity
+
+	# bind the apps_rsc irq hander to cpu1
+	echo 0x2 > /proc/irq/68/smp_affinity
 
         if [ -f /sys/devices/soc0/soc_id ]; then
                 soc_id=`cat /sys/devices/soc0/soc_id`

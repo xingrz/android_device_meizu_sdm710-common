@@ -1,0 +1,138 @@
+on init
+    # FLyme:chenjianbo add vibrator permession {@
+    chmod 0666 /sys/class/meizu/motor/on_off
+    chown system system /sys/class/meizu/motor/on_off
+    chmod 0660 /sys/class/meizu/motor/set_cspress
+    chown system system /sys/class/meizu/motor/set_cspress
+    chmod 0660 /sys/class/meizu/motor/set_mback
+    chown system system /sys/class/meizu/motor/set_mback
+    chmod 0660 /sys/class/meizu/motor/rtp
+    chown system system /sys/class/meizu/motor/rtp
+    chmod 0660 /sys/class/meizu/motor/set_rtp
+    chown system system /sys/class/meizu/motor/set_rtp
+    # @}
+
+    # FLyme:chenjianbo add cs_press  permession {@
+    chmod 0666  /sys/cs_press/cs_press/sleep
+    chown system system  /sys/cs_press/cs_press/sleep
+    # @}
+
+on post-fs-data
+    #huangxiaotao@System.Setting add for lut mode{@
+    chown system system /sys/class/meizu/lcm/display/lut
+    chmod 0660 /sys/class/meizu/lcm/display/lut
+    #@}
+
+    #huangxiaotao@System.Setting add for temperatureEffect{@
+    copy /system/etc/qdcm_calib_data_sofef00m_amoled_fhd+_cmd_mode_dsi_panel.xml /data/vendor/display/qdcm_calib_data_sofef00m_amoled_fhd+_cmd_mode_dsi_panel.xml
+    chown system system /data/vendor/display/qdcm_calib_data_sofef00m_amoled_fhd+_cmd_mode_dsi_panel.xml
+    chmod 0660 /data/vendor/display/qdcm_calib_data_sofef00m_amoled_fhd+_cmd_mode_dsi_panel.xml
+    #@}
+
+    # add by huangjinhui@bsp
+    # change the rstinfo perms
+    chown system system /sys/rstinfo/rstinfo_enable
+    restorecon /sys/rstinfo/rstinfo_enable
+    chown system system /proc/stability/rstinfo_cnt
+    chown system system /proc/stability/rootinfo_cnt
+    chown system system /proc/stability/rstinfo_debug
+    chown system system /proc/stability/rstinfo_cnt_log
+    chown system system /proc/stability/rstinfo_rst_log
+    chown system system /proc/stability/rstinfo_android_cnt
+
+    # FLYME:perf@system Feature: add bootprof {@
+    chown system system /proc/bootprof
+    chmod 0664 /proc/bootprof
+    # @}
+
+    #For SRS  wenjun.zhang@BSP
+    chown system system /sys/srs/srs_enable
+    chmod 0660 /sys/srs/srs_enable
+    chown system system /sys/srs/srs_debug
+    chmod 0660 /sys/srs/srs_debug
+    chown system system /sys/srs/srs_cpulevel
+    chmod 0660 /sys/srs/srs_cpulevel
+    chown system system /sys/srs/srs_gpulevel
+    chmod 0660 /sys/srs/srs_gpulevel
+    chown system system /sys/srs/srs_buslevel
+    chmod 0660 /sys/srs/srs_buslevel
+    chown system system /sys/srs/srs_iolevel
+    chmod 0660 /sys/srs/srs_iolevel
+    chown system system /sys/srs/srs_memlevel
+    chmod 0660 /sys/srs/srs_memlevel
+
+    # PA calibration {@
+    chown system audio /dev/msm_cirrus_playback
+    chmod 0660 /dev/msm_cirrus_playback
+    # @}
+
+    # Voice trigger (ez2control)
+    mkdir /data/vendor 0771 system system
+    mkdir /data/vendor/wolfsonmicro 0751 system system
+
+    # Add M63 cs press calibration by Richard {@
+    chown system system /dev/ndt
+    chmod 0666 /dev/ndt
+    chown system system /sys/cs_press/cs_press/cal_data
+    chmod 0666 /sys/cs_press/cs_press/cal_data
+    # @}
+
+on boot
+    #Permissions for gesture {@
+    chown system system /sys/class/meizu/tp/gesture_control
+    chmod 0660 /sys/class/meizu/tp/gesture_control
+    # @}
+
+    # Add TP interface for game_mode　#861656 {@
+    chmod 0666 /sys/class/meizu/main_tp/stabilize
+    chown system system /sys/class/meizu/main_tp/stabilize
+    # @}
+
+    #Permissions for breath blink {@
+    chown system system /sys/class/meizu/mx_leds/leds/breath/blink
+    chmod 0660 /sys/class/meizu/mx_leds/leds/breath/blink
+    # @}
+
+    # Permissions for mz_rpmb_ctl
+    chown system system /dev/mz_rpmb_ctl
+    chmod 0600 /dev/mz_rpmb_ctl
+
+    # added for breath-led & vibrator {@liudong
+    # Permissions for breath-led
+    chmod 0664 /sys/class/meizu/mx_leds/leds/breath/blink
+    chown system system /sys/class/meizu/mx_leds/leds/breath/blink
+    # Permissions for vibrator
+    chmod 0664 /sys/class/meizu/motor/on_off
+    chown system system /sys/class/meizu/motor/on_off
+    chmod 0664 /sys/class/meizu/motor/freq
+    chown system system /sys/class/meizu/motor/freq
+    # add end @}
+
+    # Permissions add for mz_sensor_test {@
+    chmod 0666 /vendor/bin/mz_sensor_test
+    chown system system /vendor/bin/mz_sensor_test
+    # @}
+
+    # Permissions add for aod {@
+    chmod 0666 /sys/class/meizu/lcm/display/doze_s2
+    chown system system /sys/class/meizu/lcm/display/doze_s2
+    # @}
+
+    # Permissions for display
+    chmod 0644 /sys/class/meizu/lcm/display/sunnyscreen
+    chown system system /sys/class/meizu/lcm/display/sunnyscreen
+
+    chmod 0666 /sys/class/meizu/lcm/display/hbm
+    chmod 0666 /sys/class/meizu/lcm/display/lut
+    chmod 0666 /sys/class/meizu/lcm/display/doze_mode
+    chmod 0666 /sys/class/meizu/lcm/display/aod
+    chmod 0666 /sys/class/meizu/main_tp/appid
+    chmod 0666 /sys/class/meizu/tp/gesture_control
+    chmod 0660 /sys/class/meizu/fp/qos_set
+    chown system system /sys/class/meizu/lcm/display/hbm
+    chown system system /sys/class/meizu/lcm/display/lut
+    chown system system /sys/class/meizu/lcm/display/doze_mode
+    chown system system /sys/class/meizu/main_tp/appid
+    chown system system /sys/class/meizu/tp/gesture_control
+    chown system system /sys/class/meizu/fp/qos_set
+    chown system system /sys/class/meizu/lcm/display/aod

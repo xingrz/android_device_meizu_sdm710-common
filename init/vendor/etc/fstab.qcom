@@ -13,7 +13,7 @@
 /dev/block/bootdevice/by-name/bluetooth                 /bt_firmware        vfat    ro,shortname=lower,uid=1002,gid=3002,dmask=227,fmask=337,context=u:object_r:bt_firmware_file:s0   wait
 /dev/block/bootdevice/by-name/modem                     /firmware           vfat    ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0      wait
 
-/dev/block/bootdevice/by-name/userdata                  /data               ext4    nosuid,noatime,nodev,barrier=1,noauto_da_alloc,discard,lazytime   wait,check,forceencrypt=footer,quota
+/dev/block/bootdevice/by-name/userdata                  /data               ext4    nosuid,noatime,nodev,barrier=1,noauto_da_alloc,discard,lazytime   wait,check,resize,quota
 
 # Need to have this entry in here even though the mount point itself is no longer needed.
 # The update_engine code looks for this entry in order to determine the boot device address
