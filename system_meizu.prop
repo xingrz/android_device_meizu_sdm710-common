@@ -32,3 +32,6 @@ persist.hvx.hwjpeg.enable=true
 
 # Fix Bilibili
 debug.hwui.use_buffer_age=false
+
+# Fix network traffic monitor
+ro.bpf.disabled=1
