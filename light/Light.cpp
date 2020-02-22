@@ -110,6 +110,9 @@ void Light::setPanelBacklight(const LightState& state) {
 
     brightness = BRIGHTNESS_MIN + ((float) brightness - 10) /
             BRIGHTNESS_RANGE_OLD * BRIGHTNESS_RANGE_NEW;
+    if (brightness < BRIGHTNESS_MIN) {
+        brightness = BRIGHTNESS_MIN;
+    }
 
     LOG(VERBOSE) << "scaling brightness " << old_brightness << " => " << brightness;
 
