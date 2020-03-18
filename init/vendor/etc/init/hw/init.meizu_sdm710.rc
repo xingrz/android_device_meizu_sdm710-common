@@ -1,3 +1,5 @@
+import /vendor/etc/init/hw/init.${ro.product.device}.rc
+
 on init
     # FLyme:chenjianbo add vibrator permession {@
     chmod 0666 /sys/class/meizu/motor/on_off
